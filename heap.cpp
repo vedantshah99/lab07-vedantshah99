@@ -51,7 +51,6 @@ void Heap::pop(){
 
 // Returns the minimum element in the heap
 int Heap::top(){
-  cout << vdata[0] << endl;
   return vdata[0];
 }
 
