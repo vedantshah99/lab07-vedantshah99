@@ -11,10 +11,11 @@ using namespace std;
 void Heap::push(int value){
   vdata.push_back(value);
   int current = vdata.size()-1;
-  while(current > 0 && vdata[current] > vdata[(current-1)/2]){
+  while(current > 0 && vdata[current] < vdata[(current-1)/2]){
     int temp = vdata[(current-1)/2];
     vdata[(current-1)/2] = vdata[current];
     vdata[current] = temp;
+    current = (current-1)/2;
   }
 }
 
@@ -59,4 +60,11 @@ bool Heap::empty(){
   if(vdata.size()>0) return false;
   return true;
 }
-    
+
+void Heap::print(){
+  cout << endl;
+  for(int i = 0;i < vdata.size(); i++){
+    cout << vdata[i] << " ";
+  }
+  cout << endl;
+}
