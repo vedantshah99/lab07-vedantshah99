@@ -30,6 +30,13 @@ void Heap::pop(){
   vdata.pop_back();
 
   int current = 0;
+  
+  /*
+  cout << "vdata[current]: " << vdata[current] << endl;
+  cout << "vdata[current*2+1]: " << vdata[current*2+1] << endl;
+  cout << "vdata[current*2+2]" << vdata[current*2+2] << endl << endl;
+  */
+
   while(current*2+1 < vdata.size() && (vdata[current] > vdata[current*2+1] || vdata[current] > vdata[current*2+2])){
     if(vdata[current*2+1] < vdata[current*2+2]){
       int temp = vdata[current];
@@ -44,7 +51,7 @@ void Heap::pop(){
       current = current*2+2;
     }
 
-    if(current*2+1 < vdata.size()){
+    if(current*2+1 > vdata.size()){
       return;
     }
   }

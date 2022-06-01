@@ -67,10 +67,15 @@ int main(int argc, char *argv[]) {
             int arand = rand() % 2000;
             data.push(arand);
             h.push(arand);
+            //h.print();
     }
+
+    cout << endl;
     //h.print();
+
     while(!data.empty()){
         assert(!h.empty());
+        //cout << "data top: " << data.top() << " h.top(): " << h.top()<< endl;
         assert(data.top()==h.top());
         data.pop();
         h.pop();
